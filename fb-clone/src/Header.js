@@ -17,29 +17,28 @@ function Header() {
         <div className='header'>
             <div className="header__left">
                 <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png"
-                    alt=""
+                    src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png"                    alt=""
                 />
                 <div className="header__input">
                     <SearchIcon/>
-                    <input type='text'/>
+                    <input placeholder='Search' type='text'/>
                 </div>
             </div>
             <div className="header__center">
-                <div className="header__option">
-                    <HomeIcon/>
+                <div className="header__option header__option--active">
+                    <HomeIcon fontSize= 'large'/>
                 </div>
                 <div className="header__option">
-                    <FlagIcon/>
+                    <FlagIcon fontSize= 'large'/>
                 </div>
                 <div className="header__option">
-                    <SubscriptionsIcon/>
+                    <SubscriptionsIcon fontSize= 'large'/>
                 </div>
                 <div className="header__option">
-                    <StorefrontIcon/>
+                    <StorefrontIcon fontSize= 'large'/>
                 </div>
                 <div className="header__option">
-                    <SupervisedUserCircleIcon/>
+                    <SupervisedUserCircleIcon fontSize= 'large'/>
                 </div>
             </div>
             <div className="header__right">
