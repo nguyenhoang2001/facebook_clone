@@ -26,7 +26,7 @@ function StoryReel() {
             />
 
             <Story profileSrc='https://i.pinimg.com/originals/5b/bb/81/5bbb81b04cc8364c38d3d1c49632b289.jpg'
-                title='robin scherbatsky'
+                title='Robin Scherbatsky'
                 image='https://i.pinimg.com/originals/5c/fd/f5/5cfdf58a087d788f0f0d92b7a16bec43.jpg'
             />
         </div>

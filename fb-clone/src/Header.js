@@ -43,8 +43,8 @@ function Header() {
             </div>
             <div className="header__right">
                 <div className="header__info">
-                    <Avatar/>
-                    <h4>Marshall</h4>
+                    <Avatar src = 'https://images4.fanpop.com/image/photos/18200000/Ted-Mosby-ted-mosby-18275839-426-640.jpg'/>
+                    <h4>Ted</h4>
                 </div>
                 <IconButton>
                     <AddRoundedIcon/>
