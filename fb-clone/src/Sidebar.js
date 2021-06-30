@@ -13,7 +13,7 @@ function Sidebar() {
     return (
         <div className='sidebar'>
             <SidebarRow src='https://images4.fanpop.com/image/photos/18200000/Ted-Mosby-ted-mosby-18275839-426-640.jpg' 
-            title='Marshall'/>
+            title='Ted'/>
             <SidebarRow Icon={LocalHospitalIcon} title='COVID-19 Information Center'/>
             <SidebarRow Icon={EmojiFlagsIcon} title='Pages'/>
             <SidebarRow Icon={PeopleIcon} title='Friends'/>
