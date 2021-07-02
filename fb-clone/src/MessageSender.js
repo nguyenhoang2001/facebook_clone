@@ -7,7 +7,8 @@ import InsertEmotionIcon from '@material-ui/icons/InsertEmoticon'
 
 function MessageSender() {
 
-    const [input, sendInput] = useState('')
+    const [input, setInput] = useState('')
+    const [imageUrl, setImageUrl] = useState('')
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -18,8 +19,17 @@ function MessageSender() {
             <div className="messageSender__top">
                 <Avatar src = 'https://images4.fanpop.com/image/photos/18200000/Ted-Mosby-ted-mosby-18275839-426-640.jpg'/>
                 <form>
-                    <input value={input} onChange={(e) => sendInput(e.target.value)} className='messageSender__input' placeholder={`What's on your mind, Ted`}/>
-                    <input placeholder={`image URL(Optional)`}/>
+                    <input
+                        value={input}
+                        onChange={(e) => setInput(e.target.value)}
+                        className='messageSender__input'
+                        placeholder={`What's on your mind, Ted`}
+                    />
+                    <input
+                        value = {imageUrl}
+                        onChange={(e) => setImageUrl(e.target.value)}
+                        placeholder={`image URL(Optional)`}
+                    />
                     <button onClick={handleSubmit} type='submit'>Hidden submit</button>
                 </form>
             </div>
