@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './MessageSender.css'
 import {Avatar} from '@material-ui/core'
 import VideocamIcon from '@material-ui/icons/Videocam'
@@ -6,6 +6,8 @@ import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary'
 import InsertEmotionIcon from '@material-ui/icons/InsertEmoticon'
 
 function MessageSender() {
+
+    const [input, sendInput] = useState('')
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -16,7 +18,7 @@ function MessageSender() {
             <div className="messageSender__top">
                 <Avatar src = 'https://images4.fanpop.com/image/photos/18200000/Ted-Mosby-ted-mosby-18275839-426-640.jpg'/>
                 <form>
-                    <input className='messageSender__input' placeholder={`What's on your mind, Ted`}/>
+                    <input value={input} onChange={(e) => sendInput(e.target.value)} className='messageSender__input' placeholder={`What's on your mind, Ted`}/>
                     <input placeholder={`image URL(Optional)`}/>
                     <button onClick={handleSubmit} type='submit'>Hidden submit</button>
                 </form>
