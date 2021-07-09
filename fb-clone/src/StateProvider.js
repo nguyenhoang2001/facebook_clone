@@ -10,4 +10,3 @@ export const StateProvider = ({reducer, initialState, childreen}) => (
 );
 
 export const useStateValue = () => useContext(StaeContext);
-
