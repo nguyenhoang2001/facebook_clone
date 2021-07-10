@@ -7,7 +7,7 @@ const firebaseConfig = {
     storageBucket: "facebook-clone-cd47b.appspot.com",
     messagingSenderId: "226559844808",
     appId: "1:226559844808:web:570add7bcaee72da50a0fd"
-  };
+};
 
   const firebaseApp = firebase.initializeApp(firebaseConfig);
   const db = firebaseApp.firestore();
