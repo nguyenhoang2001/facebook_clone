@@ -4,6 +4,7 @@ import {Avatar} from '@material-ui/core'
 import VideocamIcon from '@material-ui/icons/Videocam'
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary'
 import InsertEmotionIcon from '@material-ui/icons/InsertEmoticon'
+import { useStateValue } from './StateProvider'
 
 function MessageSender() {
 
@@ -16,10 +17,12 @@ function MessageSender() {
         setImageUrl('')
     }
 
+    const [{user}, dispatch] = useStateValue();
+
     return (
         <div className='messageSender'>
             <div className="messageSender__top">
-                <Avatar src = 'https://images4.fanpop.com/image/photos/18200000/Ted-Mosby-ted-mosby-18275839-426-640.jpg'/>
+                <Avatar src = {user.photoURL}/>
                 <form>
                     <input
                         value={input}

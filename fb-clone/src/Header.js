@@ -11,8 +11,11 @@ import AddRoundedIcon from '@material-ui/icons/AddRounded';
 import ForumIcon from '@material-ui/icons/Forum';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+import { useStateValue } from './StateProvider';
 
 function Header() {
+    const [{user},dispatch] = useStateValue();
+    
     return (
         <div className='header'>
             <div className="header__left">
@@ -43,8 +46,8 @@ function Header() {
             </div>
             <div className="header__right">
                 <div className="header__info">
-                    <Avatar src = 'https://images4.fanpop.com/image/photos/18200000/Ted-Mosby-ted-mosby-18275839-426-640.jpg'/>
-                    <h4>Ted</h4>
+                    <Avatar src = {user.photoURL}/>
+                    <h4>{user.displayName}</h4>
                 </div>
                 <IconButton>
                     <AddRoundedIcon/>
