@@ -1,28 +1,33 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import StoryReel from './StoryReel'
 import './Feed.css'
 import MessageSender from './MessageSender'
 import Post from './Post'
-
+import db from './firebase'
 function Feed() {
+    const [posts, setPosts] = useState([]);
+
+    useEffect(() => {
+        db.collection('post').onSnapshot(snapshot => {
+            setPosts(snapshot.docs.map((doc) => ({id: doc.id, 
+                data: doc.data()})))
+        })
+    }, [])
+
     return (
         <div className='feed'>
             <StoryReel/>
             <MessageSender/>
-            <Post
-                profilePic = 'https://pbs.twimg.com/profile_images/1093639847250722816/-A8kf6-1_400x400.jpg'
-                message = 'That is my son'
-                timestamp = 'timestamp'
-                username = 'Don'
-                image = 'https://lh3.googleusercontent.com/-j2BBSuMrv7U/Wli8TKU6twI/AAAAAAAAK44/mCbHmulacYECNvad_67p_H3lYvfDE-PlgCHMYCw/s1600/FB_IMG_1515764773864.jpg'
-            />
-            <Post
-                profilePic = 'https://upload.wikimedia.org/wikipedia/commons/a/ae/Michael_Jordan_in_2014.jpg'
-                message = 'Graduate in University of North Carolina'
-                timestamp = 'timestamp'
-                username = 'Jordan'
-                image = 'https://static.independent.co.uk/2021/05/09/12/GettyImages-648090854-1.jpg?width=982&height=726&auto=webp&quality=75'
-            />
+            {posts.map(post => (
+                <Post
+                    key = {post.data.id}
+                    profilePic = {post.data.profilePic}
+                    message = {post.data.message}
+                    timestamp = {post.data.timestamp}
+                    username = {post.data.username}
+                    image = {post.data.image}
+                />
+            ))}
         </div>
     )
 }
