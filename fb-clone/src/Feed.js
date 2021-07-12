@@ -8,7 +8,7 @@ function Feed() {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
-        db.collection('post').onSnapshot(snapshot => {
+        db.collection('post').orderBy('timestamp','desc').onSnapshot(snapshot => {
             setPosts(snapshot.docs.map((doc) => ({id: doc.id, 
                 data: doc.data()})))
         })
@@ -20,7 +20,7 @@ function Feed() {
             <MessageSender/>
             {posts.map(post => (
                 <Post
-                    key = {post.data.id}
+                    key = {post.id}
                     profilePic = {post.data.profilePic}
                     message = {post.data.message}
                     timestamp = {post.data.timestamp}
